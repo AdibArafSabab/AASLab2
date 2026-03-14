@@ -43,3 +43,30 @@ html, body {
     left: 30px;
     z-index: 100;
 }
+
+#hobbiesCarousel img {
+    max-height: 500px;
+    object-fit: cover;
+}
+
+#skillsCarousel {
+    max-width: 600px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#skillsCarousel img {
+    max-height: 500px;
+    object-fit: cover;
+}
+
+#learningCarousel {
+    max-width: 600px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#learningCarousel img {
+    max-height: 500px;
+    object-fit: cover;
+}
