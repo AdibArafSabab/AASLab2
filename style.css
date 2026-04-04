@@ -17,6 +17,12 @@ html, body {
     margin: 20px auto;
     border: 3px solid #0FA3B1;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .content {
@@ -36,17 +42,44 @@ html, body {
     position: static;
     display: inline-block;
     margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.next-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.next-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .prev-btn {
     position: static;
     display: inline-block;
     margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.prev-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.prev-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 #hobbiesCarousel img {
     max-height: 500px;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+#hobbiesCarousel img:hover {
+    transform: scale(1.05);
 }
 
 #skillsCarousel {
@@ -58,6 +91,11 @@ html, body {
 #skillsCarousel img {
     max-height: 500px;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+#skillsCarousel img:hover {
+    transform: scale(1.05);
 }
 
 #learningCarousel {
@@ -69,11 +107,347 @@ html, body {
 #learningCarousel img {
     max-height: 500px;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+#learningCarousel img:hover {
+    transform: scale(1.05);
 }
 
 .card-img-top {
     height: 200px;
     object-fit: cover;
+}
+
+/* Card Animations */
+.card {
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+    transition: background-color 0.3s ease;
+}
+
+.card:hover .card-body {
+    background-color: rgba(15, 163, 177, 0.05);
+}
+
+/* Mobile-friendly card animations */
+@media (max-width: 768px) {
+    .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card:active {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Navigation Link Animations */
+.nav-link {
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Button Animations */
+.btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0d7a8f;
+    border-color: #0d7a8f;
+    box-shadow: 0 4px 12px rgba(15, 163, 177, 0.4);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in Animation */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(15, 163, 177, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(15, 163, 177, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(15, 163, 177, 0);
+    }
+}
+
+/* Apply fade-in to main content */
+.content-wrapper {
+    animation: fadeIn 0.6s ease-out;
+}
+
+h1, h2, h3 {
+    animation: slideInRight 0.5s ease-out;
+}
+
+p {
+    transition: color 0.3s ease;
+}
+
+p:hover {
+    color: #0d7a8f;
+}
+
+/* Table Animations */
+table {
+    transition: all 0.3s ease;
+}
+
+table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+table tbody tr:hover {
+    background-color: rgba(15, 163, 177, 0.1) !important;
+    transform: scale(1.01);
+}
+
+/* Carousel item animation */
+.carousel-item {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Navbar animation */
+.navbar {
+    animation: slideInRight 0.5s ease-out;
+}
+
+.navbar-brand {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1);
+}
+
+/* Image transition */
+img {
+    transition: filter 0.3s ease;
+}
+
+img:hover {
+    filter: brightness(1.1);
+}
+
+/* Modal Animations */
+.modal-content {
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: modalSlideIn 0.4s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #0FA3B1 0%, #0d7a8f 100%);
+    color: white;
+    border: none;
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.modal-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.sports-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sports-list li {
+    padding: 12px 15px;
+    margin: 8px 0;
+    background-color: #f0f8fa;
+    border-left: 4px solid #0FA3B1;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.sports-list li::before {
+    content: '⚽';
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+.sports-list li:nth-child(2)::before {
+    content: '🏸';
+}
+
+.sports-list li:nth-child(3)::before {
+    content: '🏏';
+}
+
+.sports-list li:nth-child(4)::before {
+    content: '🏓';
+}
+
+.sports-list li:nth-child(5)::before {
+    content: '🏊';
+}
+
+.sports-list li:nth-child(6)::before {
+    content: '🏃';
+}
+
+.sports-list li:nth-child(7)::before {
+    content: '🚴';
+}
+
+.sports-list li:hover {
+    background-color: #0FA3B1;
+    color: white;
+    border-left-color: white;
+    transform: translateX(10px);
+    box-shadow: 0 4px 12px rgba(15, 163, 177, 0.3);
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    transition: all 0.3s ease;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Backdrop animation */
+.modal.show {
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Sports Image Trigger Styling */
+.sports-img-trigger {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin: 20px auto;
+    display: block;
+}
+
+.sports-img-trigger:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 12px 24px rgba(15, 163, 177, 0.3);
+    filter: brightness(1.1);
+}
+
+.sports-img-trigger:active {
+    transform: scale(0.98) translateY(-2px);
+}
+
+/* Mobile-friendly sports image */
+@media (max-width: 768px) {
+    .sports-img-trigger {
+        max-width: 100%;
+        width: 90%;
+    }
+
+    .sports-img-trigger:active {
+        transform: scale(1.02);
+        box-shadow: 0 8px 16px rgba(15, 163, 177, 0.25);
+    }
 }
 
 /* New responsive utility classes */
@@ -498,6 +872,24 @@ html, body {
         flex: 0 0 100%;
         max-width: 100%;
     }
+
+    .contact-row {
+        margin-top: 15px !important;
+    }
+
+    .contact-row .card {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .contact-row .card {
+        width: 100%;
+    }
+
+    .card {
+        margin-bottom: 12px;
+    }
 }
 
 /* Ensure images are responsive across all breakpoints */
@@ -521,6 +913,39 @@ img {
 p {
     word-wrap: break-word;
     overflow-wrap: break-word;
+}
+
+/* Touch-friendly focus states for mobile */
+@media (hover: none) and (pointer: coarse) {
+    /* Mobile touch devices */
+    .card:hover {
+        transform: none;
+    }
+
+    .card:focus-visible {
+        outline: 3px solid #0FA3B1;
+        outline-offset: 2px;
+    }
+
+    .sports-img-trigger:hover {
+        transform: none;
+        filter: none;
+    }
+
+    .sports-img-trigger:focus-visible {
+        outline: 3px solid #0FA3B1;
+        outline-offset: 2px;
+    }
+
+    /* Show active state on touch */
+    .card:active {
+        background-color: rgba(15, 163, 177, 0.08);
+        box-shadow: 0 4px 12px rgba(15, 163, 177, 0.2);
+    }
+
+    .sports-img-trigger:active {
+        opacity: 0.9;
+    }
 }
 
 /* Ensure tables are fully responsive on mobile */
